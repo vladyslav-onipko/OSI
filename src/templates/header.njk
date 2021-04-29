@@ -1,0 +1,7 @@
+{%  set  text = ['Roran.', 'PSD TEMPLATE', 'By LunarTemplates'] %}
+
+{% macro description() %}
+  {% for item in text %}
+    <p>{{item}}</p>
+  {% endfor %}
+{% endmacro %}

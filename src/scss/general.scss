@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $main-font;
+  min-height: 100%;
+  position: relative;
+
+  body {
+    font: {
+      family: $main-font;
+      size: 14px;
+    }
+    height: 100%;
+    line-height: 1.4;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
