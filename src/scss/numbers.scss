@@ -1,0 +1,33 @@
+@import "./navigation-bar.scss";
+
+.numbers {
+  padding: 49px 0 56px 72px;
+  background-color: #f0f0f0;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .number {
+    display: flex;
+    margin-right: 62px;
+
+    .number__img {
+      display: flex;
+      align-items: center;
+      margin-right: 16px;
+    }
+
+    .number__content {
+      .number__number {
+        @include text-descr(50px, 800, $main-color);
+      }
+
+      .number__text {
+        @include text-descr(18px, 400, #7a7a7a);
+      }
+    }
+  }
+}

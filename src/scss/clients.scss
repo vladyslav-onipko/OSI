@@ -2,18 +2,13 @@
 @import "./navigation-bar.scss";
 
 .clients {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-top: 74px;
-  margin-bottom: 54px;
   background-color: $main-color;
 
   .info-container {
     hr {
       width: 128px;
       height: 1px;
-      opacity: 0.6;
       color: #fff;
     }
 
@@ -33,10 +28,11 @@
     }
   }
 
-  .img-container {
+  .clients__img {
     display: flex;
     align-items: center;
-    margin: 42px 32px 81px 32px;
+    justify-content: center;
+    margin: 37px 32px 81px 32px;
 
     img {
       margin-right: 32px;

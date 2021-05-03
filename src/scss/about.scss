@@ -1,16 +1,13 @@
 @import "./navigation-bar.scss";
 
 .about {
-  display: flex;
-  flex-direction: column;
-
   .info {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 68px;
 
-    .nav-bar__logo {
+    .logo {
       display: flex;
 
       p {
@@ -31,7 +28,7 @@
     hr {
       width: 110px;
       color: #c0c0c0;
-      margin-bottom: 28px;
+      margin-bottom: 38px;
       height: 1px;
       opacity: 0.4;
     }
@@ -47,7 +44,7 @@
   .buns {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 89px;
+    margin-bottom: 80px;
 
     .bun {
       display: flex;
@@ -72,35 +69,6 @@
 
       img {
         margin-bottom: 38px;
-      }
-    }
-  }
-
-  .numbers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 54px 0;
-    background-color: #f0f0f0;
-
-    .number-container {
-      display: flex;
-      margin-right: 62px;
-
-      .img-container {
-        display: flex;
-        align-items: center;
-        margin-right: 16px;
-      }
-
-      .content {
-        .number {
-          @include text-descr(50px, 800, $main-color);
-        }
-
-        .text {
-          @include text-descr(18px, 400, #7a7a7a);
-        }
       }
     }
   }

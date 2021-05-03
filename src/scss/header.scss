@@ -15,12 +15,15 @@
 
 $white: #fff;
 
-.main-header {
+.header {
   position: relative;
-  display: flex;
   height: 590px;
-  justify-content: space-between;
   background-color: $main-color;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 
   p,
   h1,
@@ -31,7 +34,7 @@ $white: #fff;
     text-shadow: 2px 4px 0px rgba(10, 12, 12, 0.1);
   }
 
-  .main-header__info {
+  .header__info {
     @include flex-column();
     margin: 64px 0 0 124px;
 
@@ -42,31 +45,32 @@ $white: #fff;
       background-color: white;
     }
 
-    .main-header__title {
-      @include font(99.9px, 800);
+    .header__title {
+      @include font(100px, 800);
     }
 
-    .main-header__subtitle {
+    .header__subtitle {
       @include font(54px, 400);
     }
 
-    .main-header__author {
-      @include font(34px, 200);
+    .header__author {
+      @include font(34px, 400);
     }
 
     p {
-      @include font(18px, 100) {
+      @include font(18px, 400) {
         font-style: italic;
       }
     }
   }
 
-  .main-header__badge {
-    margin-top: 81px;
-    padding: 24px 123px 20px 55px;
-    width: 392px;
+  .header__badge {
+    position: absolute;
+    top: 81px;
+    right: 0;
+    padding: 24px 123px 20px 105px;
+    width: 472px;
     height: 85px;
-    text-align: right;
     opacity: 0.2;
     background-color: #000000;
     clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);

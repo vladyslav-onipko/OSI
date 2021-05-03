@@ -3,19 +3,19 @@
 {% macro infoContainer(title, subtitle, hrBottom=true) %}
   <div class="info-container">
     {% if hrBottom %}
-      <p class="info-container__title">{{title | safe}}</p>
-      <p class="info-container__subtitle">{{subtitle | safe}}</p>
+      <h3 class="info-container__title">{{title | safe}}</h3>
+      <h4 class="info-container__subtitle">{{subtitle | safe}}</h4>
       <hr>
     {% else %}
-      <p class="info-container__title">{{title | safe}}</p>
+      <h3 class="info-container__title">{{title | safe}}</h3>
       <hr>
-      <p class="info-container__subtitle">{{subtitle | safe}}</p>
+      <h4 class="info-container__subtitle">{{subtitle | safe}}</h4>
     {% endif %}
   </div>
 {% endmacro %}
 
 {% macro clientsContainer() %}
-  <div class="img-container">
+  <div class="clients__img">
     {% for img in images %}
       <img src="{{img}}" alt="">
     {% endfor %}

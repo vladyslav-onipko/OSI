@@ -1,0 +1,15 @@
+{% macro person(name, position) %}
+  <li class="person">
+    <div class="person__photo"></div>
+    <div class="person__info">
+      <div class="persone__description">
+        <p class="person__name">{{name}}</p>
+        <p class="person__position">{{position}}</p>
+      </div>
+      <div class="links">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-f"></i>
+      </div>
+    </div>
+  </li>
+{% endmacro %}

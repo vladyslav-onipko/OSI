@@ -1,9 +1,7 @@
 @import "./navigation-bar.scss";
 
 .services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-top: 41px;
 
   .info-container {
     .info-container__title {
@@ -23,12 +21,12 @@
     }
   }
 
-  .service-container {
+  .services__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 48px 124px 9px 124px;
+    margin: 39px 124px 9px 134px;
 
     .service {
       display: flex;
@@ -36,12 +34,12 @@
       margin-bottom: 54px;
       text-align: left;
 
-      .service__img-container {
+      .service__img {
         margin: 6px 24px 0 0;
       }
 
       .service__content {
-        .title {
+        .service__title {
           @include text-descr(18px, 400, #303030);
           margin-bottom: 14px;
 
@@ -50,7 +48,7 @@
           }
         }
 
-        .content {
+        .service__text {
           @include text-descr(13px, 400, #707070);
           line-height: 18px;
         }

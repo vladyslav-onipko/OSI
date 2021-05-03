@@ -3,78 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title></title>
+    <title>OSI</title>
     <link rel="shortcut icon" href="favicon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.min.css" />
     <script src="https://kit.fontawesome.com/0ec32966fa.js" crossorigin="anonymous" defer></script>
     <script src="js/slider.min.js" defer></script>
   </head>
   <body>
+  {% from "../templates/header.njk" import description %}
+  {% from "../templates/nav-bar.njk" import navigationBar, logoContainer, links %}
+  {% from "../templates/about.njk" import info, bun, numberBox %}
+  {% from "../templates/clients.njk" import infoContainer, clientsContainer %}
+  {% from "../templates/services.njk" import services %}
+  {% from "../templates/team.njk" import person %}
   <main class="main">
-    {% from "../templates/header.njk" import description %}
-    <section class="main-header">
-      <div class="main-header__info">
-        {{ description() }}
-        <hr>
-        <p>www.lunartemplates.com</p>
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__info">
+          {{ description() }}
+          <hr>
+          <p>www.lunartemplates.com</p>
+        </div>
+        <div class="header__badge">
+          <p>Free to download at lunartemplates.com</p>
+        </div>
+        <div class="arrows-container">
+          {% for _ in range(0, 3) %}
+            <i class="fas fa-angle-down"></i>
+          {% endfor %}
+        </div>
       </div>
-      <div class="main-header__badge">
-        <p>Free to download at lunartemplates.com</p>
-      </div>
-      <div class="arrows-container">
-        {% for _ in range(0, 3) %}
-          <i class="fas fa-angle-down"></i>
-        {% endfor %}
-      </div>
-    </section>
-    {% from "../templates/nav-bar.njk" import navigationBar %}
+    </header>
+    {% set navItems = ['Home', 'About', 'Services', 'Team', 'Portfolio', 'Contact'] %}
     <section class="nav-bar">
-      {{ navigationBar() }}
+      <div class="wrapper">
+        {{ navigationBar(navItems) }}
+        {{ links() }}
+      </div>
     </section>
-    {% from "../templates/about.njk" import info, bun, numbersBox %}
     <section class="about">
-      {{ info() }}
-      <section class="buns">
-        {{ bun('../img/paints.png', 'Some fancy <span>colors</span>',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
-        {{ bun('../img/coffe.png', 'Enough <span>coffee breaks</span>',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
-        {{ bun('../img/wand.png', 'A little bit of <span>magic</span>',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
-      </section>
-      <section class="numbers">
-        {{ numbersBox('../img/coffe.png', '1085', 'Empty cups') }}
-        {{ numbersBox('../img/smile.png', '102', 'Happy clients') }}
-        {{ numbersBox('../img/BBQ.png', '25', 'BBQ meetings') }}
-        {{ numbersBox('../img/coctail.png', '29', 'Cocktail parties') }}
-      </section>
+      <div class="wrapper">
+        {{ info() }}
+        <section class="buns">
+          {{ bun('../img/paints.png', 'Some fancy <span>colors</span>',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+          {{ bun('../img/coffe.png', 'Enough <span>coffee breaks</span>',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+          {{ bun('../img/wand.png', 'A little bit of <span>magic</span>',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+        </section>
+      </div>
     </section>
-    {% from "../templates/clients.njk" import infoContainer, clientsContainer %}
+    <section class="numbers">
+      <div class="wrapper">
+        {{ numberBox('../img/coffe.png', '1085', 'Empty cups') }}
+        {{ numberBox('../img/smile.png', '102', 'Happy clients') }}
+        {{ numberBox('../img/BBQ.png', '25', 'BBQ meetings') }}
+        {{ numberBox('../img/coctail.png', '29', 'Cocktail parties') }}
+      </div>
+    </section>
     <section class="clients">
-      {{ infoContainer('Some of our clients', 'We <i class="far fa-heart"></i> every single one') }}
-      {{ clientsContainer() }}
+      <div class="wrapper">
+        {{ infoContainer('Some of our clients', 'We <i class="far fa-heart"></i> every single one') }}
+        {{ clientsContainer() }}
+      </div>
     </section>
-    {% from "../templates/services.njk" import services %}
     <section class="services">
-      {{ infoContainer('Our Services', 'With Passion & Experience') }}
-      {{ services('Dictum tincidunt <span>diam</span>', 'Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+      <div class="wrapper">
+        {{ infoContainer('Our Services', 'With Passion & Experience') }}
+        {{ services('Dictum tincidunt <span>diam</span>', 'Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+      </div>
     </section>
     <section class="quotation">
-      <p class="quoat">"</p>
-      {{ infoContainer('Lorem ipsum dolor sit amet, <span>consectetur adipiscing</span> elit.
-      Integer at purus vulputate, vehicula nisi vitae,
-      lobortis ante. Praesent sodales iaculis ultricies.
-      Vestibulum et <span>tristique</span> nisl, sed volutpat ante.', 'Jonathan Doe', hrBottom=false) }}
-      <p class="quoat">"</p>
+      <div class="wrapper">
+        {{ infoContainer('Lorem ipsum dolor sit amet, <span>consectetur adipiscing</span> elit.
+        Integer at purus vulputate, vehicula nisi vitae,
+        lobortis ante. Praesent sodales iaculis ultricies.
+        Vestibulum et <span>tristique</span> nisl, sed volutpat ante.', 'Jonathan Doe', hrBottom=false) }}
+      </div>
     </section>
-    <section class="wraper">
+    <section class="team">
+    <div class="wrapper">
       {{ infoContainer('Meet...the team', 'They are really nice!') }}
+    </div>
+      <section class="team__slider">
+        <i class="fas fa-angle-left"></i>
+        <div class="persons">
+          <ul class="persons__list">
+            {{ person('Jonathan Doe', 'Creative Director') }}
+            {{ person('Jaden Doe', 'Mastermind') }}
+            {{ person('Mister Doe', 'Designer') }}
+            {{ person('Mister Doe', 'Designer') }}
+            {{ person('Mister Doe', 'Designer') }}
+            {{ person('Mister Doe', 'Designer') }}
+          </ul>
+        </div>
+        <i class="fas fa-angle-right"></i>
+        <div class="dots">
+          {% for _ in range(0, 5) %}
+            <i class="fas fa-circle"></i>
+          {% endfor %}
+        </div>
+      </section>
     </section>
+    {% set navBarItems = ['Web', 'Digital Art', 'Illustrations', 'Branding', 'All'] %}
+    {# <section class="portfolio">
+      {{ infoContainer('Portfolio', 'This is what we’ve been working on') }}
+      {{ navigationBar(navBarItems, logo=false) }}
+    </section> #}
   </main>
   </body>
 </html>

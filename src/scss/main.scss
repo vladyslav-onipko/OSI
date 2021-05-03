@@ -3,11 +3,50 @@
 .main {
   display: flex;
   flex-direction: column;
-  // width: 1200px;
+
+  .wrapper {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
 
   .info-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .info-container__title,
+    .info-container__subtitle {
+      line-height: 1.2;
+    }
+
+    hr {
+      width: 116px;
+      height: 1px;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+  }
+
+  .nav-bar__items {
+    display: flex;
+    list-style: none;
+
+    .nav-bar__item {
+      a {
+        @include text-descr(14px, 200, #c0c0c0);
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+          color: #303030;
+          cursor: pointer;
+        }
+      }
+
+      &:nth-child(2n) {
+        margin: 0 30px;
+      }
+    }
   }
 }

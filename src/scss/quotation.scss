@@ -3,18 +3,36 @@
 
 .quotation {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: $main-color;
-  padding: 74px 138px;
+  padding: 64px 138px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    @include text-descr(179px, 400, #fff);
+    line-height: 28px;
+    opacity: 0.2;
+    transform: rotateZ(190deg);
+    content: '"';
+  }
+
+  &::before {
+    top: 7%;
+    left: 18%;
+  }
+
+  &::after {
+    bottom: 52%;
+    right: 26%;
+  }
 
   .info-container {
     text-align: center;
 
     .info-container__title {
       @include text-descr(21px, 400, #fff);
-      margin-bottom: 24px;
+      width: 857px;
+      margin-bottom: 23px;
       padding: 0 38px;
       line-height: 28px;
 
@@ -33,23 +51,6 @@
       height: 1px;
       margin-bottom: 18px;
       color: #fff;
-    }
-  }
-  .quoat {
-    position: absolute;
-    @include text-descr(179px, 400, #fff);
-    line-height: 28px;
-    opacity: 0.2;
-    transform: rotateZ(190deg);
-
-    &:first-child {
-      top: 7%;
-      left: 8%;
-    }
-
-    &:last-child {
-      bottom: 54%;
-      right: 10%;
     }
   }
 }

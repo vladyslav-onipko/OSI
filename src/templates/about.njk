@@ -13,21 +13,21 @@
 {% endmacro %}
 
 {% macro bun(imgPath, title, description) %}
-  <div class="bun">
+  <article class="bun">
     <img src="{{imgPath}}" alt="">
     <p class="bun__title">{{title | safe}}</p>
     <p class="bun__description">{{description}}</p>
-  </div>
+  </article>
 {% endmacro %}
 
-{% macro numbersBox(imgPath, number, text) %}
-  <div class="number-container">
-    <div class="img-container">
+{% macro numberBox(imgPath, number, text) %}
+  <div class="number">
+    <div class="number__img">
       <img src="{{imgPath}}" alt="">
     </div>
-    <div class="content">
-      <p class="number">{{number}}</p>
-      <p class="text">{{text}}</p>
+    <div class="number__content">
+      <p class="number__number">{{number}}</p>
+      <p class="number__text">{{text}}</p>
     </div>
   </div>
 {% endmacro %}
