@@ -1,1 +1,1 @@
-[See this project online](https://vladyslav-onipko.github.io/OSI/.)
+[See this project online](https://vladyslav-onipko.github.io/OSI/)
