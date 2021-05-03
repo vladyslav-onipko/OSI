@@ -1,0 +1,33 @@
+{% from "../templates/nav-bar.njk" import logoContainer %}
+
+{% macro info() %}
+  <section class="info">
+    {{ logoContainer('About Roran') }}
+    <p class="info__subtitle">Creative Studio</p>
+    <hr>
+    <p class="info__text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      vulputate, vehicula nisi vitae, lobortis ante. Praesent sodales iaculis ultricies
+    </p>
+  </section>
+{% endmacro %}
+
+{% macro bun(imgPath, title, description) %}
+  <div class="bun">
+    <img src="{{imgPath}}" alt="">
+    <p class="bun__title">{{title | safe}}</p>
+    <p class="bun__description">{{description}}</p>
+  </div>
+{% endmacro %}
+
+{% macro numbersBox(imgPath, number, text) %}
+  <div class="number-container">
+    <div class="img-container">
+      <img src="{{imgPath}}" alt="">
+    </div>
+    <div class="content">
+      <p class="number">{{number}}</p>
+      <p class="text">{{text}}</p>
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,23 @@
+{% set images = ['../img/mashable.png', '../img/jquery.png', '../img/lunartemplates.png', '../img/vhdesign.png'] %}
+
+{% macro infoContainer(title, subtitle, hrBottom=true) %}
+  <div class="info-container">
+    {% if hrBottom %}
+      <p class="info-container__title">{{title | safe}}</p>
+      <p class="info-container__subtitle">{{subtitle | safe}}</p>
+      <hr>
+    {% else %}
+      <p class="info-container__title">{{title | safe}}</p>
+      <hr>
+      <p class="info-container__subtitle">{{subtitle | safe}}</p>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro clientsContainer() %}
+  <div class="img-container">
+    {% for img in images %}
+      <img src="{{img}}" alt="">
+    {% endfor %}
+  </div>
+{% endmacro %}

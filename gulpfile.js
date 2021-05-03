@@ -1,7 +1,9 @@
 const {src, dest, series, watch} = require('gulp');
 const sass = require('gulp-sass');
-const image = require('gulp-image');
-const build = require('gulp-build');
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify-es').default;
+const csso = require('gulp-csso');
+const rename = require('gulp-rename');
 const sync = require('browser-sync').create();
 const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
@@ -13,14 +15,17 @@ function html() {
     .pipe(nunjucksRender({
       path: ['./src/templates/']
     }))
-    .pipe(build())
     .pipe(dest('./dist'))
 }
 
 function js() {
   return src('./src/js/**.js')
-  .pipe(build())
-  .pipe(dest('./dist'))
+  .pipe(dest('./dist/js'))
+  .pipe(uglify())
+  .pipe(rename({
+    extname: '.min.js'
+  }))
+  .pipe(dest('./dist/js'))
 }
 
 function scss() {
@@ -28,13 +33,26 @@ function scss() {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(concat('index.css'))
-    .pipe(dest('./dist'))
+    .pipe(dest('./dist/css'))
+    .pipe(csso())
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(dest('./dist/css'))
 }
 
 function img() {
-  return src('./src/img/')
-    .pipe(image())
-    .pipe(dest('./dist'))
+  return src('./src/img/*')
+  .pipe(imagemin([
+    imagemin.mozjpeg({
+      quality: 75,
+      progressive: true
+    }),
+    imagemin.optipng({
+      optimizationLevel: 5
+    })
+  ]))
+  .pipe(dest('./dist/img'))
 }
 
 function clear() {
@@ -51,5 +69,6 @@ function serve() {
   watch('./src/js/**.js', series(js)).on('change', sync.reload);
 }
 
-exports.serve = series(clear, img, js, scss, html, serve);
+exports.serve = series(clear, js, scss, html, js, img, serve);
+exports.build = series(clear, js, scss, html, js, img);
 exports.clear = clear;

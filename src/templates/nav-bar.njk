@@ -1,0 +1,22 @@
+{% set navItems = ['Home', 'About', 'Services', 'Team', 'Portfolio', 'Contact'] %}
+{% set linkClasses = ['fab fa-linkedin-in', 'fab fa-instagram', 'fab fa-twitter', 'fab fa-facebook-f'] %}
+
+{% macro logoContainer(text) %}
+  <div class="nav-bar__logo">
+    <p>{{text}}</p><span>.</span>
+  </div>
+{% endmacro %}
+  
+{% macro navigationBar() %}
+  {{ logoContainer('Roran') }}
+  <ul class="nav-bar__items">
+    {% for item in navItems %}
+      <li class="nav-bar__item"><a href="#">{{item}}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="nav-bar__links">
+    {% for class in linkClasses %}
+      <a href="#"><i class="{{class}}"></i></a>
+    {% endfor %}
+  </div>  
+{% endmacro %}

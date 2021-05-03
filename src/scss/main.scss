@@ -1,5 +1,13 @@
+@import "./navigation-bar.scss";
+
 .main {
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  // width: 1200px;
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

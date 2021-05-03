@@ -5,22 +5,33 @@
   flex-direction: column;
 }
 
+@mixin font($size, $weight) {
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  @content;
+}
+
 $white: #fff;
 
-.header {
+.main-header {
   position: relative;
   display: flex;
   height: 590px;
   justify-content: space-between;
   background-color: $main-color;
 
-  p {
+  p,
+  h1,
+  h2,
+  h3 {
     line-height: 1;
     color: $white;
     text-shadow: 2px 4px 0px rgba(10, 12, 12, 0.1);
   }
 
-  .header__description {
+  .main-header__info {
     @include flex-column();
     margin: 64px 0 0 124px;
 
@@ -31,31 +42,26 @@ $white: #fff;
       background-color: white;
     }
 
+    .main-header__title {
+      @include font(99.9px, 800);
+    }
+
+    .main-header__subtitle {
+      @include font(54px, 400);
+    }
+
+    .main-header__author {
+      @include font(34px, 200);
+    }
+
     p {
-      &:nth-child(1) {
-        font-size: 99.9px;
-        font-weight: 800;
-      }
-
-      &:nth-child(2) {
-        font-size: 54px;
-        font-weight: 400;
-      }
-
-      &:nth-child(3) {
-        font-size: 34px;
-        font-weight: 200;
-      }
-
-      &:last-child {
-        font-size: 18px;
-        font-weight: 100;
+      @include font(18px, 100) {
         font-style: italic;
       }
     }
   }
 
-  .header__badge {
+  .main-header__badge {
     margin-top: 81px;
     padding: 24px 123px 20px 55px;
     width: 392px;
@@ -66,22 +72,22 @@ $white: #fff;
     clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
 
     p {
-      font-size: 18px;
-      line-height: 22px;
-      font-weight: 700;
+      @include font(18px, 700) {
+        line-height: 22px;
+      }
     }
   }
 
-  .arrow-container {
+  .arrows-container {
     position: absolute;
     @include flex-column();
-    bottom: 43px;
-    left: 50%;
+    bottom: 60px;
+    left: 49%;
   }
 
   i {
-    font-size: 40px;
-    height: 18px;
+    font-size: 50px;
+    height: 21px;
     line-height: 1;
     color: $white;
 
