@@ -13,3 +13,25 @@
     </div>
   </li>
 {% endmacro %}
+
+{% macro slider() %}
+  <section class="team__slider">
+    <i class="fas fa-angle-left"></i>
+    <div class="persons">
+      <ul class="persons__list">
+        {{ person('Jonathan Doe', 'Creative Director') }}
+        {{ person('Jaden Doe', 'Mastermind') }}
+        {{ person('Mister Doe', 'Designer') }}
+        {{ person('Mister Doe', 'Designer') }}
+        {{ person('Mister Doe', 'Designer') }}
+        {{ person('Mister Doe', 'Designer') }}
+      </ul>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    <div class="dots">
+      {% for _ in range(0, 5) %}
+        <i class="fas fa-circle"></i>
+      {% endfor %}
+    </div>
+  </section>
+{% endmacro %}

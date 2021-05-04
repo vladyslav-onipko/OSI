@@ -1,0 +1,20 @@
+{% macro numberBox(imgPath, number, text) %}
+  <div class="number">
+    <div class="number__img">
+      <img src="{{imgPath}}" alt="">
+    </div>
+    <div class="number__content">
+      <p class="number__number">{{number}}</p>
+      <p class="number__text">{{text}}</p>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro numbers() %}
+  <div class="wrapper">
+    {{ numberBox('../img/coffe.png', '1085', 'Empty cups') }}
+    {{ numberBox('../img/smile.png', '102', 'Happy clients') }}
+    {{ numberBox('../img/BBQ.png', '25', 'BBQ meetings') }}
+    {{ numberBox('../img/coctail.png', '29', 'Cocktail parties') }}
+  </div>
+{% endmacro %}

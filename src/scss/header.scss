@@ -1,17 +1,5 @@
 @import "./variables";
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-@mixin font($size, $weight) {
-  font: {
-    size: $size;
-    weight: $weight;
-  }
-  @content;
-}
+@import "./mixins";
 
 $white: #fff;
 

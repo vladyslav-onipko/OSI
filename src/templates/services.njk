@@ -1,6 +1,7 @@
+{% from "../templates/reusable.njk" import infoContainer %}
 {% set images = ['../img/laptop.png', '../img/cup.png', '../img/phone.png', '../img/monitor.png', '../img/monitors.png', '../img/notepud.png'] %}
 
-{% macro services(title, text) %}
+{% macro service(title, text) %}
   <div class="services__container">
     {% for img in images %}
       <article class="service">
@@ -14,5 +15,13 @@
         </div>
       </article>
     {% endfor %}
+  </div>
+{% endmacro %}
+
+{% macro services(args) %}
+  <div class="wrapper">
+    {{ infoContainer('Our Services', 'With Passion & Experience') }}
+    {{ service('Dictum tincidunt <span>diam</span>', 'Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
   </div>
 {% endmacro %}

@@ -11,73 +11,37 @@
     <script src="js/slider.min.js" defer></script>
   </head>
   <body>
-  {% from "../templates/header.njk" import description %}
-  {% from "../templates/nav-bar.njk" import navigationBar, logoContainer, links %}
-  {% from "../templates/about.njk" import info, bun, numberBox %}
-  {% from "../templates/clients.njk" import infoContainer, clientsContainer %}
+  {% from "../templates/reusable.njk" import infoContainer %}
+  {% from "../templates/header.njk" import header %}
+  {% from "../templates/nav-bar.njk" import navigationBar %}
+  {% from "../templates/about.njk" import about %}
+  {% from "../templates/numbers.njk" import numbers %}
+  {% from "../templates/clients.njk" import clients %}
   {% from "../templates/services.njk" import services %}
-  {% from "../templates/team.njk" import person %}
+  {% from "../templates/team.njk" import slider %}
+  {% from "../templates/portfolio.njk" import blocks %}
+  {% from "../templates/contact.njk" import contact %}
   <main class="main">
     <header class="header">
-      <div class="wrapper">
-        <div class="header__info">
-          {{ description() }}
-          <hr>
-          <p>www.lunartemplates.com</p>
-        </div>
-        <div class="header__badge">
-          <p>Free to download at lunartemplates.com</p>
-        </div>
-        <div class="arrows-container">
-          {% for _ in range(0, 3) %}
-            <i class="fas fa-angle-down"></i>
-          {% endfor %}
-        </div>
-      </div>
+      {{ header() }}
     </header>
-    {% set navItems = ['Home', 'About', 'Services', 'Team', 'Portfolio', 'Contact'] %}
     <section class="nav-bar">
       <div class="wrapper">
+        {% set navItems = ['Home', 'About', 'Services', 'Team', 'Portfolio', 'Contact'] %}
         {{ navigationBar(navItems) }}
-        {{ links() }}
       </div>
     </section>
     <section class="about">
-      <div class="wrapper">
-        {{ info() }}
-        <section class="buns">
-          {{ bun('../img/paints.png', 'Some fancy <span>colors</span>',
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
-          {{ bun('../img/coffe.png', 'Enough <span>coffee breaks</span>',
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
-          {{ bun('../img/wand.png', 'A little bit of <span>magic</span>',
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
-        </section>
-      </div>
+      {{ about() }}
     </section>
     <section class="numbers">
-      <div class="wrapper">
-        {{ numberBox('../img/coffe.png', '1085', 'Empty cups') }}
-        {{ numberBox('../img/smile.png', '102', 'Happy clients') }}
-        {{ numberBox('../img/BBQ.png', '25', 'BBQ meetings') }}
-        {{ numberBox('../img/coctail.png', '29', 'Cocktail parties') }}
-      </div>
+      {{ numbers() }}
     </section>
     <section class="clients">
-      <div class="wrapper">
-        {{ infoContainer('Some of our clients', 'We <i class="far fa-heart"></i> every single one') }}
-        {{ clientsContainer() }}
-      </div>
+      {{ clients() }}
     </section>
     <section class="services">
-      <div class="wrapper">
-        {{ infoContainer('Our Services', 'With Passion & Experience') }}
-        {{ services('Dictum tincidunt <span>diam</span>', 'Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
-      </div>
+      {{ services() }}
     </section>
     <section class="quotation">
       <div class="wrapper">
@@ -88,34 +52,25 @@
       </div>
     </section>
     <section class="team">
-    <div class="wrapper">
-      {{ infoContainer('Meet...the team', 'They are really nice!') }}
-    </div>
-      <section class="team__slider">
-        <i class="fas fa-angle-left"></i>
-        <div class="persons">
-          <ul class="persons__list">
-            {{ person('Jonathan Doe', 'Creative Director') }}
-            {{ person('Jaden Doe', 'Mastermind') }}
-            {{ person('Mister Doe', 'Designer') }}
-            {{ person('Mister Doe', 'Designer') }}
-            {{ person('Mister Doe', 'Designer') }}
-            {{ person('Mister Doe', 'Designer') }}
-          </ul>
-        </div>
-        <i class="fas fa-angle-right"></i>
-        <div class="dots">
-          {% for _ in range(0, 5) %}
-            <i class="fas fa-circle"></i>
-          {% endfor %}
-        </div>
-      </section>
+      <div class="wrapper">
+        {{ infoContainer('Meet...the team', 'They are really nice!') }}
+      </div>
+      {{ slider() }}
     </section>
-    {% set navBarItems = ['Web', 'Digital Art', 'Illustrations', 'Branding', 'All'] %}
-    {# <section class="portfolio">
-      {{ infoContainer('Portfolio', 'This is what we’ve been working on') }}
-      {{ navigationBar(navBarItems, logo=false) }}
-    </section> #}
+    <section class="portfolio">
+      <div class="wrapper">
+        {% set navBarItems = ['Web', 'Digital Art', 'Illustrations', 'Branding', 'All'] %}
+        {{ infoContainer('Portfolio', 'This is what we’ve been working on') }}
+        {{ navigationBar(navBarItems, only=true) }}
+      </div>
+      {{ blocks() }}
+    </section>
+    <section class="contact">
+      <div class="wrapper">
+        {{ infoContainer('Contact', 'We would really love to hear from you!') }}
+      </div>
+      {{ contact() }}
+    </section>
   </main>
   </body>
 </html>

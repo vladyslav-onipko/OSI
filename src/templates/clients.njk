@@ -1,23 +1,17 @@
+{% from "../templates/reusable.njk" import infoContainer %}
 {% set images = ['../img/mashable.png', '../img/jquery.png', '../img/lunartemplates.png', '../img/vhdesign.png'] %}
-
-{% macro infoContainer(title, subtitle, hrBottom=true) %}
-  <div class="info-container">
-    {% if hrBottom %}
-      <h3 class="info-container__title">{{title | safe}}</h3>
-      <h4 class="info-container__subtitle">{{subtitle | safe}}</h4>
-      <hr>
-    {% else %}
-      <h3 class="info-container__title">{{title | safe}}</h3>
-      <hr>
-      <h4 class="info-container__subtitle">{{subtitle | safe}}</h4>
-    {% endif %}
-  </div>
-{% endmacro %}
 
 {% macro clientsContainer() %}
   <div class="clients__img">
     {% for img in images %}
       <img src="{{img}}" alt="">
     {% endfor %}
+  </div>
+{% endmacro %}
+
+{% macro clients() %}
+  <div class="wrapper">
+    {{ infoContainer('Some of our clients', 'We <i class="far fa-heart"></i> every single one') }}
+    {{ clientsContainer() }}
   </div>
 {% endmacro %}

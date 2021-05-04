@@ -1,10 +1,5 @@
+{% from "../templates/reusable.njk" import logoContainer %}
 {% set linkClasses = ['fab fa-linkedin-in', 'fab fa-instagram', 'fab fa-twitter', 'fab fa-facebook-f'] %}
-
-{% macro logoContainer(text) %}
-  <div class="logo">
-    <p>{{text}}</p><span>.</span>
-  </div>
-{% endmacro %}
 
 {% macro links() %}
   <div class="nav-bar__links">
@@ -14,13 +9,20 @@
   </div>
 {% endmacro %}
   
-{% macro navigationBar(navItems, logo=true) %}
-  {% if logo %}
+{% macro navigationBar(navItems, only=false) %}
+  {% if only %}
+    <ul class="nav-bar__items">
+      {% for item in navItems %}
+        <li class="nav-bar__item"><a href="#">{{item}}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %} 
     {{ logoContainer('Roran') }}
+    <ul class="nav-bar__items">
+      {% for item in navItems %}
+        <li class="nav-bar__item"><a href="#">{{item}}</a></li>
+      {% endfor %}
+    </ul>
+    {{ links() }}
   {% endif %}
-  <ul class="nav-bar__items">
-    {% for item in navItems %}
-      <li class="nav-bar__item"><a href="#">{{item}}</a></li>
-    {% endfor %}
-  </ul>
 {% endmacro %}

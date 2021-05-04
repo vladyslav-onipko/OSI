@@ -1,0 +1,56 @@
+{% from "../templates/reusable.njk" import logoContainer %}
+{% from "../templates/reusable.njk" import field %}
+
+{% set contacts = [{
+  img: '../img/location.png',
+  text: 'Rue de Halle 245 1000 Brussels'
+},
+{
+  img: '../img/phone(2).png',
+  text: '03 123 45 67 0412 345 678'
+},
+{
+  img: '../img/link.png',
+  text: 'info@roran.com question@roran.com'
+}] %}
+
+{% macro formContainer() %}
+  <section class="contact__box">
+    <div class="contact__form">
+      <form action="">
+        {{ field('input', 'Your name', 'your-name', 'name') }}
+        {{ field('input', 'Your email', 'your-email', 'email', type='email') }}
+        {{ field('input', 'Subject', 'subject', 'sybject') }}
+        {# {{ field('input', 'Message', 'message', 'message') }} #}
+        <div>
+          <label for="message">Message</label>
+          <p>required</p>
+        </div>
+        <textarea name="message" cols="30" rows="10"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div class="contact__info">
+      <p class="contact__title">Contactinfo</p>
+      <p class="contact__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer at purus vulputate.
+        Vehicula nisi vitae, lobortis ante. Praesent sodales iaculis ultricies.
+      </p>
+      {% for item in contacts %}
+        <div class="contact__description">
+          <img src="{{item.img}}" alt="">
+          <p>{{item.text}}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro contact() %}
+  <div class="contact__block--blue">
+    {{ logoContainer('Roran') }}
+  </div>
+  <div class="contact__block--grey">
+    {{ formContainer() }}
+  </div>
+{% endmacro %}

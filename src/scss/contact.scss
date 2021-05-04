@@ -1,0 +1,154 @@
+@import "./variables";
+@import "./mixins";
+
+.contact {
+  position: relative;
+
+  .info-container {
+    .info-container__title {
+      @include text-descr(27px, 800, #303030);
+      margin-bottom: 5px;
+    }
+
+    .info-container__subtitle {
+      @include text-descr(21px, 400, #979797);
+      margin-bottom: 23px;
+    }
+  }
+
+  .contact__block--blue {
+    position: relative;
+    height: 459px;
+    margin-top: 28px;
+    background-color: $main-color;
+
+    .logo {
+      position: absolute;
+      top: 32.3%;
+      left: 44.3%;
+      justify-content: center;
+      padding: 12px 30px;
+      background-color: #fff;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 40%;
+        border-style: solid;
+        border-width: 14px;
+        border-color: #fff transparent transparent;
+      }
+
+      p {
+        @include text-descr(30px, 800, #303030);
+      }
+
+      span {
+        @include text-descr(30px, 800, $main-color);
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .contact__block--grey {
+    height: 598px;
+    background-color: #f0f0f0;
+  }
+
+  .contact__box {
+    display: flex;
+    position: absolute;
+    width: 960px;
+    z-index: 100;
+    padding: 37px 50px;
+    top: 38%;
+    left: 15%;
+    background-color: #fff;
+
+    .contact__form {
+      form {
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            @include text-descr(12px, 400, $main-color);
+          }
+        }
+
+        input,
+        textarea {
+          width: 506px;
+          height: 46px;
+          margin-bottom: 18px;
+          background-color: rgba(57, 163, 143, 0);
+          border: 1px solid #e2e2e2;
+          text-align: start;
+
+          &[name="message"] {
+            height: 201px;
+            margin-bottom: 31px;
+            resize: none;
+          }
+
+          &:hover {
+            border: 1px solid $main-color;
+          }
+        }
+
+        label {
+          @include text-descr(14px, 400, #303030);
+          line-height: 26px;
+        }
+
+        button {
+          width: 90px;
+          height: 46px;
+          border: none;
+          background-color: $main-color;
+          @include text-descr(14px, 700, #fff);
+          line-height: 26px;
+          text-align: center;
+
+          &:hover {
+            cursor: pointer;
+            color: $main-color;
+            border: 1px solid $main-color;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    .contact__info {
+      margin: 12px 0 0 67px;
+      .contact__title {
+        @include text-descr(23px, 700, #303030);
+        margin-bottom: 22px;
+        line-height: 26px;
+      }
+
+      .contact__text {
+        @include text-descr(14px, 400, #898989);
+        margin-bottom: 63px;
+        line-height: 20px;
+      }
+      .contact__description {
+        margin: 0 0 26px 8px;
+        display: flex;
+
+        img {
+          margin-right: 4px;
+        }
+
+        p {
+          @include text-descr(18px, 400, #303030);
+          padding: 8px 24px 0 24px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}

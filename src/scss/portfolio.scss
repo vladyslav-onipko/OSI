@@ -1,19 +1,57 @@
-// .portfolio {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
+@import "./variables";
+@import "./mixins";
 
-//   .info-container {
-//     .info-container__title {
-//       font-size: 27px;
-//       font-weight: 800;
-//       color: #303030;
-//     }
+.portfolio {
+  padding: 58px 0 0;
 
-//     .info-container__subtitle {
-//       font-size: 21px;
-//       font-weight: 400;
-//       color: #979797;
-//     }
-//   }
-// }
+  .info-container {
+    .info-container__title {
+      @include text-descr(27px, 800, #303030);
+      margin-bottom: 5px;
+    }
+
+    .info-container__subtitle {
+      @include text-descr(21px, 400, #979797);
+      margin-bottom: 23px;
+    }
+
+    hr {
+      margin-bottom: 44px;
+    }
+  }
+
+  .nav-bar__items {
+    justify-content: center;
+
+    .nav-bar__item {
+      a {
+        @include text-descr(16px, 400, #959595);
+
+        &:hover,
+        :active {
+          color: #303030;
+        }
+      }
+
+      &:nth-child(2n) {
+        margin: 0 48px;
+      }
+    }
+  }
+
+  .portfolio__blocks {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0 63px 0;
+
+    .block {
+      flex: 0 1 calc(100% / 4);
+      min-height: 252px;
+      background-color: $main-color;
+
+      &:nth-child(even) {
+        background-color: #62c5b2;
+      }
+    }
+  }
+}

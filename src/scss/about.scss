@@ -1,4 +1,5 @@
-@import "./navigation-bar.scss";
+@import "./mixins";
+@import "./variables";
 
 .about {
   .info {
@@ -6,19 +7,6 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 68px;
-
-    .logo {
-      display: flex;
-
-      p {
-        @include text-descr(48px, 800, #303030);
-      }
-
-      span {
-        @include text-descr(48px, 800, $main-color);
-        margin-left: 8px;
-      }
-    }
 
     .info__subtitle {
       @include text-descr(30px, 400, #979797);

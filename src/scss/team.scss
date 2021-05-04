@@ -1,4 +1,5 @@
-@import "./navigation-bar.scss";
+@import "./mixins";
+@import "./variables";
 
 .team {
   .info-container {
@@ -29,6 +30,21 @@
     align-items: center;
     padding: 50px 30px 35px 30px;
     background-color: #f0f0f0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      // border: {
+      //   style: solid;
+      //   width: 30px, 32px;
+      //   color: transparent transparent #f0f0f0 transparent;
+      // }
+      border-style: solid;
+      border-width: 30px 32px;
+      border-color: transparent transparent #f0f0f0 transparent;
+      left: 48%;
+      top: -60px;
+    }
 
     .fa-angle-left,
     .fa-angle-right {

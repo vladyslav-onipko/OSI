@@ -1,0 +1,21 @@
+@mixin text-descr($size, $weight, $color) {
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  line-height: 1.2;
+  color: $color;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin font($size, $weight) {
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  @content;
+}

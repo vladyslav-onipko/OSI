@@ -1,0 +1,28 @@
+{% macro infoContainer(title, subtitle, hrBottom=true) %}
+  <div class="info-container">
+    {% if hrBottom %}
+      <h3 class="info-container__title">{{title | safe}}</h3>
+      <h4 class="info-container__subtitle">{{subtitle | safe}}</h4>
+      <hr>
+    {% else %}
+      <h3 class="info-container__title">{{title | safe}}</h3>
+      <hr>
+      <h4 class="info-container__subtitle">{{subtitle | safe}}</h4>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro logoContainer(text) %}
+  <div class="logo">
+    <p>{{text}}</p><span>.</span>
+  </div>
+{% endmacro %}
+
+{% macro field(field, label, for,  name, value='', type='text') %}
+  <div>
+    <label for="{{for}}">{{label}}</label>
+    <p>required</p>
+  </div>
+  <{{field}} type="{{type}}" name="{{name}}" value="{{value}}">
+{% endmacro %}
+

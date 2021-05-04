@@ -1,4 +1,4 @@
-{% from "../templates/nav-bar.njk" import logoContainer %}
+{% from "../templates/reusable.njk" import logoContainer %}
 
 {% macro info() %}
   <section class="info">
@@ -20,14 +20,19 @@
   </article>
 {% endmacro %}
 
-{% macro numberBox(imgPath, number, text) %}
-  <div class="number">
-    <div class="number__img">
-      <img src="{{imgPath}}" alt="">
-    </div>
-    <div class="number__content">
-      <p class="number__number">{{number}}</p>
-      <p class="number__text">{{text}}</p>
-    </div>
+{% macro about() %}
+  <div class="wrapper">
+    {{ info() }}
+    <section class="buns">
+      {{ bun('../img/paints.png', 'Some fancy <span>colors</span>',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+      {{ bun('../img/coffe.png', 'Enough <span>coffee breaks</span>',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+      {{ bun('../img/wand.png', 'A little bit of <span>magic</span>',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Integer at purus vulputate, vehicula nisi vitae, lobortis ante.') }}
+    </section>
   </div>
 {% endmacro %}

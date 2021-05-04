@@ -1,13 +1,5 @@
 @import "./variables";
-
-@mixin text-descr($size, $weight, $color) {
-  font: {
-    size: $size;
-    weight: $weight;
-  }
-  line-height: 1.2;
-  color: $color;
-}
+@import "./mixins";
 
 .nav-bar {
   padding: 16px 0;
