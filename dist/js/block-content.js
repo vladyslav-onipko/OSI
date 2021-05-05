@@ -1,7 +1,7 @@
 const block = document.querySelector('.portfolio__blocks :nth-child(6)');
 
 const items = {
-  img: '../img/clip.png',
+  img: './dist/img/clip.png',
   title: 'Free Website PSD',
   subtitle: 'Web'
 }
