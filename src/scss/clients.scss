@@ -7,8 +7,9 @@
 
   .info-container {
     hr {
-      width: 128px;
+      width: 134px !important;
       height: 1px;
+      opacity: 1 !important;
       color: #fff;
     }
 
@@ -23,7 +24,7 @@
 
       i {
         height: 17px;
-        font-weight: lighter;
+        font-weight: 200;
       }
     }
   }
@@ -32,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 37px 32px 81px 32px;
+    margin: 31px 32px 79px 32px;
 
     img {
       margin-right: 32px;

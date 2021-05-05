@@ -2,9 +2,17 @@
 @import "./mixins";
 
 .nav-bar {
-  padding: 16px 0;
+  padding: 14px 0;
   border-bottom: 1px solid #c0c0c0;
-  margin-bottom: 50px;
+  margin-bottom: 54px;
+
+  .nav-bar__items {
+    li:first-child {
+      a {
+        color: #303030;
+      }
+    }
+  }
 
   .wrapper {
     display: flex;
@@ -14,7 +22,7 @@
 
   .logo {
     display: flex;
-    margin-left: 49px;
+    margin-left: 58px;
 
     p {
       @include text-descr(30px, 800, #303030);
@@ -23,25 +31,6 @@
     span {
       @include text-descr(30px, 800, $main-color);
       margin-left: 3px;
-    }
-  }
-
-  .nav-bar__links {
-    margin-right: 59px;
-    a {
-      font-size: 14px;
-      height: 17px;
-      color: #c0c0c0;
-
-      &:nth-child(2n) {
-        margin: 0 15px;
-      }
-
-      &:hover,
-      &:active {
-        color: #303030;
-        cursor: pointer;
-      }
     }
   }
 }

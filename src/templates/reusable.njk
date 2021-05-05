@@ -18,11 +18,18 @@
   </div>
 {% endmacro %}
 
-{% macro field(field, label, for,  name, value='', type='text') %}
+{% macro field(label, name, value='', type='text') %}
   <div>
-    <label for="{{for}}">{{label}}</label>
+    <label>{{label}}</label>
     <p>required</p>
   </div>
-  <{{field}} type="{{type}}" name="{{name}}" value="{{value}}">
+  <input type="{{type}}" name="{{name}}" value="{{value}}">
 {% endmacro %}
 
+{% macro links(iconClasses) %}
+  <div class="links">
+    {% for class in iconClasses %}
+      <a href="#"><i class="{{class}}"></i></a>
+    {% endfor %}
+  </div>
+{% endmacro %}

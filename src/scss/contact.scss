@@ -61,7 +61,7 @@
     position: absolute;
     width: 960px;
     z-index: 100;
-    padding: 37px 50px;
+    padding: 37px 47px;
     top: 38%;
     left: 15%;
     background-color: #fff;
@@ -72,6 +72,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+          padding: 0 7px 0 5px;
 
           p {
             @include text-descr(12px, 400, $main-color);
@@ -123,7 +124,7 @@
     }
 
     .contact__info {
-      margin: 12px 0 0 67px;
+      margin: 9px 0 0 73px;
       .contact__title {
         @include text-descr(23px, 700, #303030);
         margin-bottom: 22px;
@@ -139,14 +140,11 @@
         margin: 0 0 26px 8px;
         display: flex;
 
-        img {
-          margin-right: 4px;
-        }
-
         p {
           @include text-descr(18px, 400, #303030);
-          padding: 8px 24px 0 24px;
           line-height: 22px;
+          width: 141px;
+          margin: 9px 0 0 20px;
         }
       }
     }

@@ -18,12 +18,11 @@
   <section class="contact__box">
     <div class="contact__form">
       <form action="">
-        {{ field('input', 'Your name', 'your-name', 'name') }}
-        {{ field('input', 'Your email', 'your-email', 'email', type='email') }}
-        {{ field('input', 'Subject', 'subject', 'sybject') }}
-        {# {{ field('input', 'Message', 'message', 'message') }} #}
+        {{ field('Your name', 'your-name', 'name') }}
+        {{ field('Your email', 'your-email', 'email', type='email') }}
+        {{ field('Subject', 'subject', 'sybject') }}
         <div>
-          <label for="message">Message</label>
+          <label>Message</label>
           <p>required</p>
         </div>
         <textarea name="message" cols="30" rows="10"></textarea>

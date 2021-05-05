@@ -2,18 +2,17 @@
 @import "./variables";
 
 .numbers {
-  padding: 49px 0 56px 72px;
+  padding: 54px;
   background-color: #f0f0f0;
 
   .wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
 
   .number {
     display: flex;
-    margin-right: 62px;
 
     .number__img {
       display: flex;

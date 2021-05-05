@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/index.min.css" />
     <script src="https://kit.fontawesome.com/0ec32966fa.js" crossorigin="anonymous" defer></script>
     <script src="js/slider.min.js" defer></script>
+    <script src="../js/block-content.min.js" defer></script>
   </head>
   <body>
   {% from "../templates/reusable.njk" import infoContainer %}
@@ -21,6 +22,7 @@
   {% from "../templates/team.njk" import slider %}
   {% from "../templates/portfolio.njk" import blocks %}
   {% from "../templates/contact.njk" import contact %}
+  {% from "../templates/footer.njk" import footer %}
   <main class="main">
     <header class="header">
       {{ header() }}
@@ -71,6 +73,9 @@
       </div>
       {{ contact() }}
     </section>
+    <footer class="footer">
+      {{ footer() }}
+    </footer>
   </main>
   </body>
 </html>

@@ -1,13 +1,6 @@
 {% from "../templates/reusable.njk" import logoContainer %}
+{% from "../templates/reusable.njk" import links %}
 {% set linkClasses = ['fab fa-linkedin-in', 'fab fa-instagram', 'fab fa-twitter', 'fab fa-facebook-f'] %}
-
-{% macro links() %}
-  <div class="nav-bar__links">
-    {% for class in linkClasses %}
-      <a href="#"><i class="{{class}}"></i></a>
-    {% endfor %}
-  </div>
-{% endmacro %}
   
 {% macro navigationBar(navItems, only=false) %}
   {% if only %}
@@ -23,6 +16,6 @@
         <li class="nav-bar__item"><a href="#">{{item}}</a></li>
       {% endfor %}
     </ul>
-    {{ links() }}
+    {{ links(linkClasses) }}
   {% endif %}
 {% endmacro %}

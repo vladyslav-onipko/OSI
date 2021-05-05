@@ -3,7 +3,7 @@
 
 .team {
   .info-container {
-    padding: 46px 0 40px 0;
+    padding: 54px 0 40px 0;
 
     .info-container__title {
       @include text-descr(29px, 800, #303030);
@@ -124,6 +124,10 @@
 
       i {
         margin-right: 6px;
+
+        &:first-child {
+          color: #39a38f;
+        }
       }
     }
   }

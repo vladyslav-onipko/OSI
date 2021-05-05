@@ -4,13 +4,13 @@
 .quotation {
   position: relative;
   background-color: $main-color;
-  padding: 64px 138px;
+  padding: 71px 138px;
 
   &::before,
   &::after {
     position: absolute;
     @include text-descr(179px, 400, #fff);
-    line-height: 28px;
+    line-height: 25px;
     opacity: 0.2;
     transform: rotateZ(190deg);
     content: '"';
@@ -32,7 +32,7 @@
     .info-container__title {
       @include text-descr(21px, 400, #fff);
       width: 857px;
-      margin-bottom: 23px;
+      margin-bottom: 25px;
       padding: 0 38px;
       line-height: 28px;
 
@@ -44,12 +44,14 @@
     .info-container__subtitle {
       @include text-descr(18px, 400, #fff);
       line-height: 28px;
+      margin-top: 4px;
     }
 
     hr {
       width: 116px;
       height: 1px;
-      margin-bottom: 18px;
+      margin: 0;
+      opacity: 1;
       color: #fff;
     }
   }

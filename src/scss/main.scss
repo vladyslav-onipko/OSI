@@ -37,8 +37,28 @@
     hr {
       width: 116px;
       height: 1px;
+      opacity: 0.6;
       margin-bottom: 18px;
       color: #fff;
+    }
+  }
+
+  .links {
+    margin-right: 59px;
+    a {
+      font-size: 14px;
+      height: 17px;
+      color: #c0c0c0;
+
+      &:nth-child(2n) {
+        margin: 0 15px;
+      }
+
+      &:hover,
+      &:active {
+        color: #303030;
+        cursor: pointer;
+      }
     }
   }
 
@@ -48,7 +68,7 @@
 
     .nav-bar__item {
       a {
-        @include text-descr(14px, 200, #c0c0c0);
+        @include text-descr(14px, 200, #a4a4a4);
         text-decoration: none;
 
         &:hover,

@@ -1,6 +1,7 @@
 const {src, dest, series, watch} = require('gulp');
 const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
+const htmlmin = require('gulp-htmlmin');
 const uglify = require('gulp-uglify-es').default;
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
@@ -14,6 +15,10 @@ function html() {
   return src('./src/pages/**.njk')
     .pipe(nunjucksRender({
       path: ['./src/templates/']
+    }))
+    .pipe(dest('./'))
+    .pipe(htmlmin({
+      collapseWhitespace: true
     }))
     .pipe(dest('./dist'))
 }

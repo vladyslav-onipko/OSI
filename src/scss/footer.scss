@@ -1,0 +1,30 @@
+@import "./variables";
+@import "./mixins";
+
+.footer {
+  background-color: #d8d8d8;
+  padding: 14px 80px;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links {
+    // margin: 0 0 0 82px !important;
+    a {
+      color: #878787 !important;
+    }
+  }
+
+  .fa-angle-up {
+    color: #878787;
+    font-size: 34px;
+    // margin-right: 40px;
+  }
+
+  p {
+    @include text-descr(15px, 400, #737373);
+    line-height: 22px;
+  }
+}
