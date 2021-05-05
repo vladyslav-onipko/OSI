@@ -54,6 +54,7 @@
     .block {
       flex: 0 1 calc(100% / 4);
       min-height: 252px;
+      height: 24.8vw;
       background-color: $main-color;
 
       &:nth-child(2) {

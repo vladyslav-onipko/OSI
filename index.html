@@ -6,7 +6,7 @@
     <title>OSI</title>
     <link rel="shortcut icon" href="favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./dist/css/index.min.css" />
+    <link rel="stylesheet" href="css/index.min.css" />
     <script src="https://kit.fontawesome.com/0ec32966fa.js" crossorigin="anonymous" defer></script>
     <script src="./dist/js/slider.min.js" defer></script>
     <script src="./dist/js/block-content.min.js" defer></script>
@@ -527,27 +527,27 @@
     <label>Your name</label>
     <p>required</p>
   </div>
-  <input type="name" name="your-name">
+  <input type="name" name="your-name" required>
 
         
   <div>
     <label>Your email</label>
     <p>required</p>
   </div>
-  <input type="email" name="your-email">
+  <input type="email" name="your-email" required>
 
         
   <div>
     <label>Subject</label>
     <p>required</p>
   </div>
-  <input type="sybject" name="subject">
+  <input type="sybject" name="subject" required>
 
         <div>
           <label for="message">Message</label>
           <p>required</p>
         </div>
-        <textarea name="message" cols="30" rows="10"></textarea>
+        <textarea name="message" cols="30" rows="10" required></textarea>
         <button type="submit">Send</button>
       </form>
     </div>

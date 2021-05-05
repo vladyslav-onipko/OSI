@@ -83,6 +83,7 @@
           width: 506px;
           height: 46px;
           margin-bottom: 18px;
+          padding-left: 7px;
           background-color: rgba(57, 163, 143, 0);
           border: 1px solid #e2e2e2;
           text-align: start;
@@ -96,6 +97,14 @@
           &:hover {
             border: 1px solid $main-color;
           }
+
+          &:invalid {
+            border: 1px solid red;
+          }
+        }
+
+        textarea {
+          padding-top: 7px;
         }
 
         label {

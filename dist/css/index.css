@@ -187,6 +187,7 @@
       width: 506px;
       height: 46px;
       margin-bottom: 18px;
+      padding-left: 7px;
       background-color: rgba(57, 163, 143, 0);
       border: 1px solid #e2e2e2;
       text-align: start; }
@@ -198,6 +199,11 @@
       .contact .contact__box .contact__form form input:hover,
       .contact .contact__box .contact__form form textarea:hover {
         border: 1px solid #39a38f; }
+      .contact .contact__box .contact__form form input:invalid,
+      .contact .contact__box .contact__form form textarea:invalid {
+        border: 1px solid red; }
+    .contact .contact__box .contact__form form textarea {
+      padding-top: 7px; }
     .contact .contact__box .contact__form form label {
       font-size: 14px;
       font-weight: 400;
@@ -595,6 +601,7 @@ html {
           -ms-flex: 0 1 calc(100% / 4);
               flex: 0 1 calc(100% / 4);
       min-height: 252px;
+      height: 24.8vw;
       background-color: #39a38f; }
       .portfolio .portfolio__blocks .block:nth-child(2) {
         background-color: #62c5b2; }
@@ -791,10 +798,10 @@ html {
       cursor: pointer;
       color: #39a38f; }
   .team .team__slider .fa-angle-left {
-    left: 11%;
+    left: 146px;
     top: 46%; }
   .team .team__slider .fa-angle-right {
-    right: 11%;
+    right: 146px;
     top: 46%; }
   .team .team__slider .persons {
     width: 945px;
@@ -834,7 +841,8 @@ html {
             line-height: 1.2;
             color: #8c8c8c; }
           .team .team__slider .persons .persons__list .person .person__info .links {
-            color: #c0c0c0; }
+            color: #c0c0c0;
+            margin: 0; }
             .team .team__slider .persons .persons__list .person .person__info .links i:first-child {
               margin-right: 10px; }
   .team .team__slider .dots {
