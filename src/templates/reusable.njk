@@ -18,12 +18,12 @@
   </div>
 {% endmacro %}
 
-{% macro field(label, name, value='', type='text') %}
+{% macro field(label, name, type='text') %}
   <div>
     <label>{{label}}</label>
     <p>required</p>
   </div>
-  <input type="{{type}}" name="{{name}}" value="{{value}}">
+  <input type="{{type}}" name="{{name}}">
 {% endmacro %}
 
 {% macro links(iconClasses) %}

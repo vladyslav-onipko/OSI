@@ -52,18 +52,17 @@
   }
 
   .contact__block--grey {
-    height: 598px;
     background-color: #f0f0f0;
+    padding-bottom: 50px;
   }
 
   .contact__box {
     display: flex;
-    position: absolute;
+    position: relative;
     width: 960px;
-    z-index: 100;
+    z-index: 1;
     padding: 37px 47px;
-    top: 38%;
-    left: 15%;
+    margin: -143px auto 33px;
     background-color: #fff;
 
     .contact__form {

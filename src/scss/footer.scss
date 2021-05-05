@@ -11,16 +11,23 @@
   }
 
   .links {
-    // margin: 0 0 0 82px !important;
     a {
       color: #878787 !important;
+
+      &:hover {
+        color: #a4a4a4 !important;
+      }
     }
   }
 
   .fa-angle-up {
     color: #878787;
     font-size: 34px;
-    // margin-right: 40px;
+
+    &:hover {
+      cursor: pointer;
+      color: #a4a4a4;
+    }
   }
 
   p {

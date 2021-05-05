@@ -5,7 +5,7 @@ $white: #fff;
 
 .header {
   position: relative;
-  height: 590px;
+  height: 596px;
   background-color: $main-color;
 
   .wrapper {
@@ -54,7 +54,7 @@ $white: #fff;
 
   .header__badge {
     position: absolute;
-    top: 81px;
+    top: 87px;
     right: 0;
     padding: 24px 123px 20px 105px;
     width: 472px;
@@ -75,6 +75,10 @@ $white: #fff;
     @include flex-column();
     bottom: 60px;
     left: 49%;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   i {
@@ -82,6 +86,7 @@ $white: #fff;
     height: 21px;
     line-height: 1;
     color: $white;
+    animation: coloriser infinite 2s ease-out none;
 
     &:nth-child(1) {
       opacity: 0.3;
@@ -90,5 +95,27 @@ $white: #fff;
     &:nth-child(2) {
       opacity: 0.6;
     }
+  }
+}
+
+@keyframes coloriser {
+  0% {
+    opacity: 0.2;
+  }
+
+  25% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.1;
   }
 }

@@ -2,6 +2,7 @@
 @import "./variables";
 
 .about {
+  margin-bottom: -60px;
   .info {
     display: flex;
     flex-direction: column;
@@ -32,7 +33,7 @@
   .buns {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 87px;
+    margin-bottom: 147px;
 
     .bun {
       display: flex;
