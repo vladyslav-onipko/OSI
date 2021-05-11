@@ -10,6 +10,7 @@
     align-items: center;
     @include media-max-width(767) {
       flex-direction: column;
+      justify-content: center;
     }
   }
 
