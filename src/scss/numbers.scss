@@ -4,11 +4,11 @@
 .numbers {
   padding: 54.5px;
   background-color: #f0f0f0;
-  @include media-max-width(767) {
-    padding: 31.5px;
-  }
   @include media-max-width(1279) {
     padding: 24.5px;
+  }
+  @include media-max-width(767) {
+    padding: 31.5px;
   }
 
   .wrapper {

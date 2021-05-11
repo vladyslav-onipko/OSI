@@ -749,12 +749,12 @@ html {
 .numbers {
   padding: 54.5px;
   background-color: #f0f0f0; }
-  @media (max-width: 767px) {
-    .numbers {
-      padding: 31.5px; } }
   @media (max-width: 1279px) {
     .numbers {
       padding: 24.5px; } }
+  @media (max-width: 767px) {
+    .numbers {
+      padding: 31.5px; } }
   .numbers .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
