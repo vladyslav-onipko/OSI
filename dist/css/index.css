@@ -408,13 +408,18 @@
       color: #a4a4a4 !important; }
   @media (max-width: 767px) {
     .footer .links {
-      margin-right: 0 !important; } }
+      margin-right: 0 !important;
+      position: relative; } }
   .footer .fa-angle-up {
     color: #878787;
     font-size: 34px; }
     .footer .fa-angle-up:hover {
       cursor: pointer;
       color: #a4a4a4; }
+    @media (max-width: 767px) {
+      .footer .fa-angle-up {
+        position: absolute;
+        right: 20px; } }
   .footer p {
     font-size: 15px;
     font-weight: 400;
@@ -752,9 +757,6 @@ html {
   @media (max-width: 1279px) {
     .numbers {
       padding: 24.5px; } }
-  @media (max-width: 767px) {
-    .numbers {
-      padding: 31.5px; } }
   .numbers .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -767,7 +769,10 @@ html {
     @media (max-width: 767px) {
       .numbers .wrapper {
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap; } }
+            flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
   .numbers .number {
     display: -webkit-box;
     display: -ms-flexbox;
