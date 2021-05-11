@@ -8,6 +8,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media-max-width(767) {
+      flex-direction: column;
+    }
   }
 
   .links {
@@ -17,6 +20,9 @@
       &:hover {
         color: #a4a4a4 !important;
       }
+    }
+    @include media-max-width(767) {
+      margin-right: 0 !important;
     }
   }
 
@@ -33,5 +39,9 @@
   p {
     @include text-descr(15px, 400, #737373);
     line-height: 22px;
+    @include media-max-width(767) {
+      text-align: center;
+      margin-bottom: 3px;
+    }
   }
 }

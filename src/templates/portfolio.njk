@@ -1,5 +1,5 @@
-{% macro blocks() %}
-  <div class="portfolio__blocks">
+{% macro blocks(id) %}
+  <div class="portfolio__blocks" id="{{id | lower}}">
     {% for i in range(0, 8) %}
       <div class="block"></div>
     {% endfor %}

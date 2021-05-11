@@ -1,3 +1,5 @@
+{% from "./nav-bar.njk" import socials %}
+
 {% macro person(name, position) %}
   <li class="person">
     <div class="person__photo"></div>
@@ -7,8 +9,8 @@
         <p class="person__position">{{position}}</p>
       </div>
       <div class="links">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
+        <a class="{{socials[2].linkClass}}" href=""><i class="{{socials[2].fontClass}}"></i></a>
+        <a class="{{socials[3].linkClass}}" href=""><i class="{{socials[3].fontClass}}"></i></a>
       </div>
     </div>
   </li>

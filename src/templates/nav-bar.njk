@@ -1,21 +1,37 @@
 {% from "../templates/reusable.njk" import logoContainer %}
 {% from "../templates/reusable.njk" import links %}
-{% set linkClasses = ['fab fa-linkedin-in', 'fab fa-instagram', 'fab fa-twitter', 'fab fa-facebook-f'] %}
-  
+{% set socials = [{
+  fontClass: 'fab fa-linkedin-in',
+  linkClass: 'linkedin'
+},
+{
+  fontClass: 'fab fa-pinterest-p',
+  linkClass: 'pinterest'
+},
+{
+  fontClass: 'fab fa-twitter',
+  linkClass: 'twitter'
+},
+{
+  fontClass: 'fab fa-facebook-f',
+  linkClass: 'facebook'
+}
+]%}
+
 {% macro navigationBar(navItems, only=false) %}
   {% if only %}
     <ul class="nav-bar__items">
       {% for item in navItems %}
-        <li class="nav-bar__item"><a href="#">{{item}}</a></li>
+        <li class="nav-bar__item"><a data-tab="#{{item | lower | replace(' ', '-')}}">{{item}}</a></li>
       {% endfor %}
     </ul>
   {% else %} 
     {{ logoContainer('Roran') }}
     <ul class="nav-bar__items">
       {% for item in navItems %}
-        <li class="nav-bar__item"><a href="#">{{item}}</a></li>
+        <li class="nav-bar__item"><a href="#{{item | lower}}">{{item}}</a></li>
       {% endfor %}
     </ul>
-    {{ links(linkClasses) }}
+    {{ links(socials) }}
   {% endif %}
 {% endmacro %}

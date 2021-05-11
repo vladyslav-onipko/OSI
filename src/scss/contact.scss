@@ -13,6 +13,10 @@
     .info-container__subtitle {
       @include text-descr(21px, 400, #979797);
       margin-bottom: 23px;
+      @include media-max-width(767) {
+        font-size: 15px;
+        margin-bottom: 16px;
+      }
     }
   }
 
@@ -21,11 +25,15 @@
     height: 459px;
     margin-top: 28px;
     background-color: $main-color;
+    @include media-max-width(767) {
+      height: 376px;
+    }
 
     .logo {
       position: absolute;
       top: 32.3%;
-      left: 44.3%;
+      left: 50%;
+      transform: translateX(-50%);
       justify-content: center;
       padding: 12px 30px;
       background-color: #fff;
@@ -34,10 +42,11 @@
         content: "";
         position: absolute;
         top: 100%;
-        left: 40%;
+        left: 50%;
         border-style: solid;
         border-width: 14px;
         border-color: #fff transparent transparent;
+        transform: translateX(-50%);
       }
 
       p {
@@ -64,6 +73,15 @@
     padding: 37px 47px;
     margin: -143px auto 33px;
     background-color: #fff;
+    @include media-max-width(1279) {
+      width: 90%;
+    }
+    @include media-max-width(767) {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 90%;
+      margin-bottom: 0;
+    }
 
     .contact__form {
       form {
@@ -87,19 +105,32 @@
           background-color: rgba(57, 163, 143, 0);
           border: 1px solid #e2e2e2;
           text-align: start;
+          @include media-max-width(1279) {
+            width: 296px;
+            height: 38px;
+          }
+          @include media-max-width(767) {
+            width: 100%;
+            height: 30px;
+          }
 
           &[name="message"] {
             height: 201px;
             margin-bottom: 31px;
             resize: none;
+            @include media-max-width(1279) {
+              height: 179px;
+            }
+            @include media-max-width(767) {
+              height: 95px;
+            }
           }
 
           &:hover {
             border: 1px solid $main-color;
           }
-
-          &:invalid {
-            border: 1px solid red;
+          &.invalid {
+            border-color: rgb(221, 125, 125);
           }
         }
 
@@ -120,6 +151,10 @@
           @include text-descr(14px, 700, #fff);
           line-height: 26px;
           text-align: center;
+          @include media-max-width(767) {
+            width: 66px;
+            height: 32px;
+          }
 
           &:hover {
             cursor: pointer;
@@ -133,6 +168,12 @@
 
     .contact__info {
       margin: 9px 0 0 73px;
+      @include media-max-width(767) {
+        margin: 32px 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .contact__title {
         @include text-descr(23px, 700, #303030);
         margin-bottom: 22px;
@@ -143,6 +184,11 @@
         @include text-descr(14px, 400, #898989);
         margin-bottom: 63px;
         line-height: 20px;
+        @include media-max-width(767) {
+          font-size: 14px;
+          text-align: center;
+          margin-bottom: 23px;
+        }
       }
       .contact__description {
         margin: 0 0 26px 8px;
@@ -153,6 +199,9 @@
           line-height: 22px;
           width: 141px;
           margin: 9px 0 0 20px;
+          @include media-max-width(767) {
+            font-size: 14px;
+          }
         }
       }
     }

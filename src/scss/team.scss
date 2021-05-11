@@ -4,6 +4,9 @@
 .team {
   .info-container {
     padding: 54px 0 40px 0;
+    @include media-max-width(767) {
+      padding-top: 37px;
+    }
 
     .info-container__title {
       @include text-descr(29px, 800, #303030);
@@ -12,6 +15,9 @@
     .info-container__subtitle {
       @include text-descr(21px, 400, #979797);
       margin-bottom: 26px;
+      @include media-max-width(767) {
+        margin-bottom: 16px;
+      }
     }
 
     hr {
@@ -34,16 +40,12 @@
     &::before {
       content: "";
       position: absolute;
-      // border: {
-      //   style: solid;
-      //   width: 30px, 32px;
-      //   color: transparent transparent #f0f0f0 transparent;
-      // }
       border-style: solid;
       border-width: 30px 32px;
       border-color: transparent transparent #f0f0f0 transparent;
-      left: 48%;
+      left: 50%;
       top: -60px;
+      transform: translateX(-50%);
     }
 
     .fa-angle-left,
@@ -61,21 +63,43 @@
     .fa-angle-left {
       left: 146px;
       top: 46%;
+      @include media-max-width(1279) {
+        left: 63px;
+        top: 365px;
+      }
+      @include media-max-width(767) {
+        left: 39px;
+        top: 364px;
+      }
     }
 
     .fa-angle-right {
       right: 146px;
       top: 46%;
+      @include media-max-width(1279) {
+        right: 63px;
+        top: 365px;
+      }
+      @include media-max-width(767) {
+        right: 39px;
+        top: 364px;
+      }
     }
 
     .persons {
       width: 945px;
       overflow: hidden;
+      @include media-max-width(1279) {
+        width: 623px;
+      }
+      @include media-max-width(767) {
+        width: 302px;
+      }
 
       .persons__list {
         display: flex;
         list-style: none;
-        transition: margin-left 250ms;
+        transition: all ease 1s;
 
         .person {
           border-bottom: 3px solid $main-color;
@@ -107,9 +131,11 @@
             .links {
               color: #c0c0c0;
               margin: 0;
-
-              i:first-child {
-                margin-right: 10px;
+              a {
+                margin: 0;
+                &:first-child {
+                  margin-right: 10px;
+                }
               }
             }
           }
@@ -127,7 +153,11 @@
         margin-right: 6px;
 
         &:first-child {
-          color: #39a38f;
+          color: $main-color;
+        }
+
+        &.active {
+          color: $main-color;
         }
       }
     }

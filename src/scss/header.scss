@@ -7,13 +7,23 @@ $white: #fff;
   position: relative;
   height: 596px;
   background-color: $main-color;
+  @include media-max-width(767) {
+    height: 487px;
+  }
 
   .wrapper {
     display: flex;
     justify-content: space-between;
+    @include media-max-width(767) {
+      display: block;
+    }
+    @include media-max-width(1279) {
+      display: block;
+    }
   }
 
   p,
+  a,
   h1,
   h2,
   h3 {
@@ -25,29 +35,52 @@ $white: #fff;
   .header__info {
     @include flex-column();
     margin: 64px 0 0 124px;
+    @include media-max-width(767) {
+      margin: 34px 0 0 44px;
+    }
 
     hr {
       margin: 26px 0;
       width: 244px;
       height: 1px;
       background-color: white;
+      @include media-max-width(767) {
+        margin: 14px 0;
+      }
     }
 
     .header__title {
       @include font(100px, 800);
+      @include media-max-width(767) {
+        font-size: 31px;
+      }
     }
 
     .header__subtitle {
       @include font(54px, 400);
+      @include media-max-width(767) {
+        font-size: 19px;
+      }
     }
 
     .header__author {
       @include font(34px, 400);
+      @include media-max-width(767) {
+        font-size: 24px;
+      }
     }
 
-    p {
+    a {
       @include font(18px, 400) {
         font-style: italic;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+        @include media-max-width(767) {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -62,10 +95,34 @@ $white: #fff;
     opacity: 0.2;
     background-color: #000000;
     clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
+    @include media-max-width(767) {
+      width: 292px;
+      height: 97px;
+      padding: 27px 25px 0px 69px;
+      position: static;
+      margin-top: 22px;
+    }
+    @include media-max-width(1279) {
+      position: static;
+      margin-top: 22px;
+    }
 
     p {
       @include font(18px, 700) {
         line-height: 22px;
+      }
+      @include media-max-width(767) {
+        @include font(14px, 700) {
+          line-height: 22px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -75,6 +132,9 @@ $white: #fff;
     @include flex-column();
     bottom: 60px;
     left: 49%;
+    @include media-max-width(767) {
+      left: 45%;
+    }
 
     &:hover {
       cursor: pointer;

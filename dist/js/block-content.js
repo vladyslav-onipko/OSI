@@ -1,10 +1,10 @@
-const block = document.querySelector('.portfolio__blocks :nth-child(6)');
+const blocks = document.querySelectorAll('.portfolio__blocks :nth-child(6)');
 
 const items = {
   img: './dist/img/clip.png',
   title: 'Free Website PSD',
   subtitle: 'Web'
-}
+};
 
 const addContent = (hook, content) => {
   const image = document.createElement('img');
@@ -18,6 +18,8 @@ const addContent = (hook, content) => {
   subtitle.textContent = content.subtitle;
 
   hook.append(image, title, subtitle);
-}
+};
 
-addContent(block, items);
+blocks.forEach(block => {
+  addContent(block, items);
+})

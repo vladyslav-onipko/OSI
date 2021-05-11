@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSI</title>
     <link rel="shortcut icon" href="favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -10,7 +11,10 @@
     <script src="https://kit.fontawesome.com/0ec32966fa.js" crossorigin="anonymous" defer></script>
     <script src="./dist/js/slider.min.js" defer></script>
     <script src="./dist/js/block-content.min.js" defer></script>
-    <script src="./dist/js/scroll.js" defer></script>
+    <script src="./dist/js/scroll.min.js" defer></script>
+    <script src="./dist/js/tabs.min.js" defer></script>
+    <script src="./dist/js/form-validator.min.js" defer></script>
+    <script src="./dist/js/social-links.min.js" defer></script>
   </head>
   <body>
   {% from "../templates/reusable.njk" import infoContainer %}
@@ -25,7 +29,7 @@
   {% from "../templates/contact.njk" import contact %}
   {% from "../templates/footer.njk" import footer %}
   <main class="main">
-    <header class="header">
+    <header class="header" id="home">
       {{ header() }}
     </header>
     <section class="nav-bar">
@@ -34,7 +38,7 @@
         {{ navigationBar(navItems) }}
       </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       {{ about() }}
     </section>
     <section class="numbers">
@@ -43,7 +47,7 @@
     <section class="clients">
       {{ clients() }}
     </section>
-    <section class="services">
+    <section class="services" id="services">
       {{ services() }}
     </section>
     <section class="quotation">
@@ -54,21 +58,23 @@
         Vestibulum et <span>tristique</span> nisl, sed volutpat ante.', 'Jonathan Doe', hrBottom=false) }}
       </div>
     </section>
-    <section class="team">
+    <section class="team" id="team">
       <div class="wrapper">
         {{ infoContainer('Meet...the team', 'They are really nice!') }}
       </div>
       {{ slider() }}
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <div class="wrapper">
         {% set navBarItems = ['Web', 'Digital Art', 'Illustrations', 'Branding', 'All'] %}
         {{ infoContainer('Portfolio', 'This is what we’ve been working on') }}
         {{ navigationBar(navBarItems, only=true) }}
       </div>
-      {{ blocks() }}
+      {% for item in navBarItems %}
+        {{ blocks(item | replace(' ', '-')) }}
+      {% endfor %}
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="wrapper">
         {{ infoContainer('Contact', 'We would really love to hear from you!') }}
       </div>

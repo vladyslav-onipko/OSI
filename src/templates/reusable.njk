@@ -23,13 +23,13 @@
     <label>{{label}}</label>
     <p>required</p>
   </div>
-  <input type="{{type}}" name="{{name}}" required>
+  <input type="{{type}}" name="{{name}}">
 {% endmacro %}
 
-{% macro links(iconClasses) %}
+{% macro links(socials) %}
   <div class="links">
-    {% for class in iconClasses %}
-      <a href="#"><i class="{{class}}"></i></a>
+    {% for social in socials %}
+      <a class="{{social.linkClass}}" href=""><i class="{{social.fontClass}}"></i></a>
     {% endfor %}
   </div>
 {% endmacro %}

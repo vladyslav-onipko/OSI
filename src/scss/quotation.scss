@@ -5,6 +5,9 @@
   position: relative;
   background-color: $main-color;
   padding: 71px 138px;
+  @include media-max-width(767) {
+    padding: 42px 0;
+  }
 
   &::before,
   &::after {
@@ -14,16 +17,35 @@
     opacity: 0.2;
     transform: rotateZ(190deg);
     content: '"';
+    @include media-max-width(767) {
+      font-size: 135px;
+    }
   }
 
   &::before {
-    top: 7%;
-    left: 18%;
+    top: 0%;
+    left: 16%;
+    @include media-max-width(1279) {
+      top: 0;
+      left: 1%;
+    }
+    @include media-max-width(767) {
+      top: 10px;
+      left: 20%;
+    }
   }
 
   &::after {
-    bottom: 52%;
-    right: 26%;
+    bottom: 40%;
+    right: 25%;
+    @include media-max-width(1279) {
+      bottom: 43%;
+      right: 12%;
+    }
+    @include media-max-width(767) {
+      bottom: 28%;
+      right: 25%;
+    }
   }
 
   .info-container {
@@ -35,6 +57,10 @@
       margin-bottom: 25px;
       padding: 0 38px;
       line-height: 28px;
+      @include media-max-width(767) {
+        width: 280px;
+        padding: 23px 0;
+      }
 
       span {
         font-weight: 700;
@@ -53,6 +79,9 @@
       margin: 0;
       opacity: 1;
       color: #fff;
+      @include media-max-width(767) {
+        margin-top: 5px;
+      }
     }
   }
 }

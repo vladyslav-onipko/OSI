@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSI</title>
     <link rel="shortcut icon" href="favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -10,7 +11,10 @@
     <script src="https://kit.fontawesome.com/0ec32966fa.js" crossorigin="anonymous" defer></script>
     <script src="./dist/js/slider.min.js" defer></script>
     <script src="./dist/js/block-content.min.js" defer></script>
-    <script src="./dist/js/scroll.js" defer></script>
+    <script src="./dist/js/scroll.min.js" defer></script>
+    <script src="./dist/js/tabs.min.js" defer></script>
+    <script src="./dist/js/form-validator.min.js" defer></script>
+    <script src="./dist/js/social-links.min.js" defer></script>
   </head>
   <body>
   
@@ -25,7 +29,7 @@
   
   
   <main class="main">
-    <header class="header">
+    <header class="header" id="home">
       
   <div class="wrapper">
     <div class="header__info">
@@ -39,10 +43,10 @@
   
 
       <hr>
-      <p>www.lunartemplates.com</p>
+      <a href="lunartemplates.com">www.lunartemplates.com</a>
     </div>
     <div class="header__badge">
-      <p>Free to download at lunartemplates.com</p>
+      <p>Free to download at <a href="lunartemplates.com">lunartemplates.com</a></p>
     </div>
     <div class="arrows-container">
       
@@ -68,29 +72,29 @@
 
     <ul class="nav-bar__items">
       
-        <li class="nav-bar__item"><a href="#">Home</a></li>
+        <li class="nav-bar__item"><a href="#home">Home</a></li>
       
-        <li class="nav-bar__item"><a href="#">About</a></li>
+        <li class="nav-bar__item"><a href="#about">About</a></li>
       
-        <li class="nav-bar__item"><a href="#">Services</a></li>
+        <li class="nav-bar__item"><a href="#services">Services</a></li>
       
-        <li class="nav-bar__item"><a href="#">Team</a></li>
+        <li class="nav-bar__item"><a href="#team">Team</a></li>
       
-        <li class="nav-bar__item"><a href="#">Portfolio</a></li>
+        <li class="nav-bar__item"><a href="#portfolio">Portfolio</a></li>
       
-        <li class="nav-bar__item"><a href="#">Contact</a></li>
+        <li class="nav-bar__item"><a href="#contact">Contact</a></li>
       
     </ul>
     
   <div class="links">
     
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a class="linkedin" href=""><i class="fab fa-linkedin-in"></i></a>
     
-      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a class="pinterest" href=""><i class="fab fa-pinterest-p"></i></a>
     
-      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
     
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
     
   </div>
 
@@ -98,7 +102,7 @@
 
       </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       
   <div class="wrapper">
     
@@ -223,7 +227,7 @@
   </div>
 
     </section>
-    <section class="services">
+    <section class="services" id="services">
       
   <div class="wrapper">
     
@@ -331,7 +335,7 @@
 
       </div>
     </section>
-    <section class="team">
+    <section class="team" id="team">
       <div class="wrapper">
         
   <div class="info-container">
@@ -357,8 +361,8 @@
         <p class="person__position">Creative Director</p>
       </div>
       <div class="links">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
+        <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
+        <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
   </li>
@@ -372,8 +376,8 @@
         <p class="person__position">Mastermind</p>
       </div>
       <div class="links">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
+        <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
+        <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
   </li>
@@ -387,8 +391,8 @@
         <p class="person__position">Designer</p>
       </div>
       <div class="links">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
+        <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
+        <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
   </li>
@@ -402,8 +406,8 @@
         <p class="person__position">Designer</p>
       </div>
       <div class="links">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
+        <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
+        <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
   </li>
@@ -417,8 +421,8 @@
         <p class="person__position">Designer</p>
       </div>
       <div class="links">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
+        <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
+        <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
   </li>
@@ -432,8 +436,8 @@
         <p class="person__position">Designer</p>
       </div>
       <div class="links">
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-f"></i>
+        <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
+        <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
   </li>
@@ -445,7 +449,7 @@
   </section>
 
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <div class="wrapper">
         
         
@@ -461,22 +465,23 @@
   
     <ul class="nav-bar__items">
       
-        <li class="nav-bar__item"><a href="#">Web</a></li>
+        <li class="nav-bar__item"><a data-tab="#web">Web</a></li>
       
-        <li class="nav-bar__item"><a href="#">Digital Art</a></li>
+        <li class="nav-bar__item"><a data-tab="#digital-art">Digital Art</a></li>
       
-        <li class="nav-bar__item"><a href="#">Illustrations</a></li>
+        <li class="nav-bar__item"><a data-tab="#illustrations">Illustrations</a></li>
       
-        <li class="nav-bar__item"><a href="#">Branding</a></li>
+        <li class="nav-bar__item"><a data-tab="#branding">Branding</a></li>
       
-        <li class="nav-bar__item"><a href="#">All</a></li>
+        <li class="nav-bar__item"><a data-tab="#all">All</a></li>
       
     </ul>
   
 
       </div>
       
-  <div class="portfolio__blocks">
+        
+  <div class="portfolio__blocks" id="web">
     
       <div class="block"></div>
     
@@ -496,8 +501,97 @@
     
   </div>
 
+      
+        
+  <div class="portfolio__blocks" id="digital-art">
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+  </div>
+
+      
+        
+  <div class="portfolio__blocks" id="illustrations">
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+  </div>
+
+      
+        
+  <div class="portfolio__blocks" id="branding">
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+  </div>
+
+      
+        
+  <div class="portfolio__blocks" id="all">
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+      <div class="block"></div>
+    
+  </div>
+
+      
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="wrapper">
         
   <div class="info-container">
@@ -527,27 +621,27 @@
     <label>Your name</label>
     <p>required</p>
   </div>
-  <input type="name" name="your-name" required>
+  <input type="name" name="your-name">
 
         
   <div>
     <label>Your email</label>
     <p>required</p>
   </div>
-  <input type="email" name="your-email" required>
+  <input type="email" name="your-email">
 
         
   <div>
     <label>Subject</label>
     <p>required</p>
   </div>
-  <input type="sybject" name="subject" required>
+  <input type="sybject" name="subject">
 
         <div>
           <label for="message">Message</label>
           <p>required</p>
         </div>
-        <textarea name="message" cols="30" rows="10" required></textarea>
+        <textarea name="message" cols="30" rows="10"></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
@@ -587,13 +681,13 @@
     
   <div class="links">
     
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a class="linkedin" href=""><i class="fab fa-linkedin-in"></i></a>
     
-      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a class="pinterest" href=""><i class="fab fa-pinterest-p"></i></a>
     
-      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a class="twitter" href=""><i class="fab fa-twitter"></i></a>
     
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
     
   </div>
 

@@ -3,6 +3,9 @@
 
 .services {
   padding-top: 49px;
+  @include media-max-width(767) {
+    padding-top: 38px;
+  }
 
   .info-container {
     .info-container__title {
@@ -20,6 +23,9 @@
       margin-top: 25px;
       opacity: 0.3;
       color: #fff;
+      @include media-max-width(767) {
+        margin: 18px 0 22px 0;
+      }
     }
   }
 
@@ -29,12 +35,23 @@
     justify-content: space-between;
     align-items: center;
     margin: 35px 124px 9px 134px;
+    @include media-max-width(767) {
+      align-items: center;
+      margin: 0;
+    }
+    @include media-max-width(1279) {
+      margin: 0;
+      justify-content: center;
+    }
 
     .service {
       display: flex;
       width: 300px;
       margin-bottom: 54px;
       text-align: left;
+      @include media-max-width(767) {
+        margin-bottom: 32px;
+      }
 
       .service__img {
         margin: 6px 24px 0 0;

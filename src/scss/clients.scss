@@ -4,6 +4,9 @@
 .clients {
   padding-top: 74px;
   background-color: $main-color;
+  @include media-max-width(767) {
+    padding-top: 54px;
+  }
 
   .info-container {
     hr {
@@ -32,11 +35,26 @@
   .clients__img {
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     margin: 31px 32px 79px 32px;
+    @include media-max-width(767) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 37px;
+    }
+    @include media-max-width(1279) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     img {
       margin-right: 32px;
+      @include media-max-width(1279) {
+        margin: 0 32px 20px;
+      }
+      @include media-max-width(767) {
+        margin: 0 32px 14px;
+      }
     }
   }
 }
