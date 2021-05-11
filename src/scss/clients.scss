@@ -35,7 +35,7 @@
   .clients__img {
     display: flex;
     align-items: center;
-    // justify-content: center;
+    justify-content: center;
     margin: 31px 32px 79px 32px;
     @include media-max-width(767) {
       flex-wrap: wrap;
